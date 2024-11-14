@@ -112,6 +112,10 @@ header {
 }
 /* O placeholder do campo de busca é branco, em maiúsculas, com espaçamento à esquerda e peso de fonte leve. */
 
+#hamburger-menu {
+  display: none;
+}
+
 .swiper {
   width: 100%;
   height: 100vh;
@@ -167,7 +171,9 @@ header {
 
 .swiper .swiper-wrapper .swiper-slide .banner img {
   position: absolute;
-  max-width: 700px;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
   transform: translateX(-50%);
   z-index: 1;
   left: 50%;
@@ -179,20 +185,18 @@ header {
   width: 60px;
   height: 60px;
   top: 50%;
-  left: 60%;
+  left: 5%;
   z-index: 100;
-  background-color: red;
 }
 /* O botão anterior do swiper está posicionado com largura e altura de 60px, no centro vertical e com fundo vermelho. */
 
 .swiper .swiper-button-next {
   position: absolute;
-  right: 70%;
+  right: 5%;
   top: 50%;
   width: 60px;
   height: 60px;
   z-index: 100;
-  background-color: blue;
 }
 /* O botão próximo do swiper está posicionado com largura e altura de 60px, no centro vertical e com fundo azul. */
 
@@ -227,6 +231,7 @@ header {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  z-index: 100;
 }
 /* O conteúdo à esquerda do banner é exibido em uma coluna flexível, espaçado uniformemente. */
 
@@ -239,7 +244,7 @@ header {
 .banner .left .features .rating {
   color: #ffffff;
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
   margin-bottom: 25px;
 }
@@ -266,7 +271,8 @@ header {
 .banner .left .features .pricing {
   color: #ffffff;
   display: flex;
-  justify-content: flex-start;
+  width: 100%;
+  justify-content: center;
   align-items: center;
 }
 /* A seção de preços é exibida com texto branco e layout flexível para alinhamento horizontal. */
@@ -284,6 +290,7 @@ header {
   font-size: 0.7em;
   text-transform: uppercase;
   font-weight: 400;
+  margin-bottom: 10px;
 }
 /* O texto adicional no conteúdo tem tamanho de fonte 0.7em, é exibido em maiúsculas e tem peso de fonte 400. */
 
@@ -358,3 +365,104 @@ header {
   max-height: 250px;
 }
 /* O iframe à direita do banner tem largura máxima de 450px e altura máxima de 250px. */
+@media (max-width: 1024px) {
+  .banner h1 {
+    display: none;
+  }
+
+  .banner .right h2 {
+    display: none;
+  }
+
+  .banner .right .description {
+    display: none;
+  }
+
+  .banner .left .features {
+    margin-bottom: 0;
+  }
+
+  .swiper .swiper-wrapper .swiper-slide .banner .left {
+    height: 100vh;
+    max-height: 70vh;
+    position: relative;
+    justify-content: flex-end;
+    margin-bottom: 0;
+  }
+
+  .swiper .swiper-wrapper .swiper-slide .banner .right {
+    justify-content: flex-end;
+  }
+}
+
+
+@media (max-width: 768px) {
+  header {
+    width: 100%;
+    padding: 20px;
+  }
+
+  .login-container {
+    display: none;
+  }
+
+  .nav {
+    display: none;
+  }
+
+  .search {
+    display: none;
+  }
+
+  #hamburger-menu {
+    display: block;
+    background-color: transparent;
+    border: none;
+  }
+
+  #hamburger-menu img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .swiper .swiper-wrapper .swiper-slide .banner .right {
+    display: none;
+  }
+
+  .swiper .swiper-wrapper .swiper-slide .banner .left {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-end;
+    position: absolute;
+    bottom: 0;
+    padding: 20px;
+    z-index: 100;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+  }
+
+  .banner .left .features {
+    max-width: 100%;
+    margin-bottom: 0;
+    display: flex;
+  }
+
+  .banner .left .features .rating {
+    margin-bottom: 0;
+  }
+
+  .banner .left .features .content {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-left: 0;
+  }
+
+  .banner .left .features .content span {
+    margin-bottom: 0;
+  }
+}
