@@ -13,7 +13,7 @@
 body {
   position: relative;
   background-color: #000000;
-  font-family: "Roboto", sans-serif;
+  font-family: "Lexend", sans-serif;
   width: 100%;
   min-height: 100vh;
   overflow: hidden;
@@ -51,11 +51,13 @@ header {
 .nav {
   display: flex;
   width: 100%;
+  gap: 20px;
   justify-content: space-around;
 }
 /* A navegação usa um layout flexível, ocupando 100% da largura, com os itens distribuídos de maneira uniforme. */
 
 .nav li {
+  text-align: center;
   list-style-type: none;
 }
 /* Remove os marcadores das listas de navegação. */
@@ -67,7 +69,6 @@ header {
   font-weight: 300;
   letter-spacing: 1px;
   cursor: pointer;
-  padding: 10px;
 }
 /* Os links na navegação são brancos, sem sublinhado, com texto em maiúsculas, peso de fonte leve (300), espaçamento entre letras de 1px, e um cursor de ponteiro. */
 
@@ -81,6 +82,15 @@ header {
   width: 130px;
   height: 40px;
   transition: 0.5s;
+}
+
+.search img {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 20px;
+  height: 20px;
 }
 /* A barra de busca tem uma largura inicial de 130px, altura de 40px, e uma transição de 0,5s. */
 
@@ -100,7 +110,7 @@ header {
   border: 1px solid rgba(255, 255, 255, 0.5);
   outline: none;
   border-radius: 4px;
-  padding: 0 10px 0 5px;
+  padding: 0 10px 0 35px;
 }
 /* O campo de texto da busca é posicionado absolutamente dentro do contêiner, ocupa 100% da largura e altura, tem texto branco, fundo transparente, borda semitransparente, bordas arredondadas e espaçamento interno. */
 
@@ -111,8 +121,118 @@ header {
   font-weight: 300;
 }
 /* O placeholder do campo de busca é branco, em maiúsculas, com espaçamento à esquerda e peso de fonte leve. */
+.search-login-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 20px;
+}
+
+.login-container button {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  background-color: var(--primary);
+  color: #ffffff;
+  border: none;
+  height: 40px;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.login-container button img {
+  width: 20px;
+  height: 20px;
+}
 
 #hamburger-menu {
+  display: none;
+}
+
+.hamburger-menu-open {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: flex-end;
+  position: absolute;
+  top: 105px;
+  right: 0;
+  transition: transform 0.3s ease-in-out;
+  transform: translateY(-100%);
+  opacity: 0;
+  pointer-events: none;
+}
+.hamburger-menu-nav {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.hamburger-menu-list {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.hamburger-menu-nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.hamburger-menu-nav ul li {
+  display: flex;
+  justify-content: center;
+}
+
+.hamburger-menu-nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 300;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+
+.hamburger-login-container button {
+  display: block;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+  width: 100%;
+  padding: 5px 20px;
+  background-color: var(--primary);
+  color: #fff;
+  text-decoration: none;
+  border: none;
+  border-radius: 4px;
+  text-transform: uppercase;
+  font-weight: 300;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+
+.hamburger-login-container button img {
+  width: 20px;
+  height: 20px;
+}
+
+.hamburger-menu-open:not(.hidden) {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.hidden {
   display: none;
 }
 
@@ -366,6 +486,10 @@ header {
 }
 /* O iframe à direita do banner tem largura máxima de 450px e altura máxima de 250px. */
 @media (max-width: 1024px) {
+  header {
+    padding: 20px 60px;
+  }
+
   .banner h1 {
     display: none;
   }
@@ -395,7 +519,6 @@ header {
   }
 }
 
-
 @media (max-width: 768px) {
   header {
     width: 100%;
@@ -411,7 +534,9 @@ header {
   }
 
   .search {
-    display: none;
+    width: 260px;
+    margin-left: 15px;
+    margin-right: 15px;
   }
 
   #hamburger-menu {
@@ -445,9 +570,11 @@ header {
   }
 
   .banner .left .features {
-    max-width: 100%;
+    width: 100%;
     margin-bottom: 0;
     display: flex;
+    justify-content: space-between;
+    gap: 10px;
   }
 
   .banner .left .features .rating {
@@ -464,5 +591,11 @@ header {
 
   .banner .left .features .content span {
     margin-bottom: 0;
+  }
+}
+
+@media (max-width: 425px) {
+  .search {
+    width: 150px;
   }
 }

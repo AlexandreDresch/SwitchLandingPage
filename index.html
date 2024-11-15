@@ -3,6 +3,7 @@
   <!-- Define o tipo de documento como HTML5 e define o idioma da página como inglês -->
   <head>
     <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="/images/nintendo-switch.png" />
     <!-- Define o conjunto de caracteres como UTF-8 -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Define a viewport para que a página seja responsiva em dispositivos móveis -->
@@ -11,6 +12,13 @@
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap"
+      rel="stylesheet"
     />
     <!-- Link para a folha de estilo do Swiper, uma biblioteca para carrosséis -->
     <title>Gaming Website Landing Page</title>
@@ -21,7 +29,7 @@
     <!-- Início do corpo da página -->
     <header>
       <!-- Cabeçalho da página -->
-      <a href="" class="logo">
+      <a href="/" class="logo">
         <!-- Link com a classe 'logo', utilizado para branding -->
         <img
           src="images/nintendo-switch.png"
@@ -60,23 +68,68 @@
         </ul>
       </nav>
 
-      <div class="login-container">
-        <!-- Div que contém o botão de login e um campo de texto -->
-        <button>Login</button>
-        <!-- Botão para login -->
-        <input type="text" name="" id="" />
-        <!-- Campo de texto para possível entrada de dados de login -->
-      </div>
+      <div class="search-login-container">
+        <div class="search">
+          <!-- Div para a barra de pesquisa -->
+          <input type="text" id="gameInput" placeholder="Search" />
+          <img src="images/icons/search.svg" alt="Search Icon" />
+          <!-- Campo de texto para a pesquisa de jogos -->
+        </div>
 
-      <div class="search">
-        <!-- Div para a barra de pesquisa -->
-        <input type="text" id="gameInput" placeholder="Search" />
-        <!-- Campo de texto para a pesquisa de jogos -->
+        <div class="login-container">
+          <!-- Div que contém o botão de login e um campo de texto -->
+
+          <button>
+            <img src="images/icons/log-in.svg" alt="Login Icon" />
+            <span>LOGIN</span>
+          </button>
+          <!-- Botão para login -->
+        </div>
       </div>
 
       <button id="hamburger-menu">
         <img src="./images/icons/menu.svg" alt="Hamburger menu icon" />
       </button>
+
+      <div class="hamburger-menu-open hidden">
+        <nav class="hamburger-menu-nav">
+          <!-- Seção de navegação do site -->
+          <ul class="hamburger-menu-list">
+            <!-- Lista de itens de navegação -->
+            <li>
+              <a href="https://www.nintendo.com/us/whatsnew/" target="_blank"
+                >Switch News</a
+              >
+              <!-- Link para notícias do Nintendo Switch, abre em nova aba -->
+            </li>
+            <li>
+              <a
+                href="https://www.nintendo.com/pt-br/switch/online/"
+                target="_blank"
+                >Switch Online</a
+              >
+              <!-- Link para o serviço online do Switch, abre em nova aba -->
+            </li>
+            <li>
+              <a
+                href="https://www.nintendo.com/us/switch/online/nintendo-switch-online/classic-games/"
+                target="_blank"
+                >Switch Classic</a
+              >
+              <!-- Link para os jogos clássicos do Nintendo Switch, abre em nova aba -->
+            </li>
+
+            <li class="hamburger-login-container">
+              <!-- Div que contém o botão de login e um campo de texto -->
+              <button>
+                <img src="images/icons/log-in.svg" alt="Login Icon" />
+                <span>LOGIN</span>
+              </button>
+              <!-- Botão para login -->
+            </li>
+          </ul>
+        </nav>
+      </div>
     </header>
 
     <main>
@@ -168,9 +221,12 @@
           </article>
           <article class="swiper-slide" id="slide-2">
             <!-- Substituindo <div> com <article> para semântica -->
-            <img src="images/pokemon-legends-arceus.jpeg" alt="Banner do Pokemon Legends Arceus" />
+            <img
+              src="images/pokemon-legends-arceus.jpeg"
+              alt="Banner do Pokemon Legends Arceus"
+            />
             <!-- Imagem do banner do jogo Pokemon Legends Arceus -->
-          
+
             <div class="backscene"></div>
             <!-- Div para uma camada de fundo -->
             <div class="banner">
@@ -209,7 +265,11 @@
                 <h1 class="pokemon-title">Pokemon</h1>
                 <!-- Título "Pokemon" -->
               </div>
-              <img src="images/red.png" alt="Treinador Pokemon Red" class="pokemon" />
+              <img
+                src="images/red.png"
+                alt="Treinador Pokemon Red"
+                class="pokemon"
+              />
               <!-- Imagem do treinador Pokemon Red -->
               <div class="right">
                 <!-- Seção à direita do banner -->
@@ -242,12 +302,15 @@
               </div>
             </div>
           </article>
-          
+
           <article class="swiper-slide" id="slide-3">
             <!-- Novo slide para o jogo Link (Zelda) -->
-            <img src="images/The-Legend-of-Zelda-Breath-of-the-Wild.jpeg" alt="Banner do jogo Link (Zelda)" />
+            <img
+              src="images/The-Legend-of-Zelda-Breath-of-the-Wild.jpeg"
+              alt="Banner do jogo Link (Zelda)"
+            />
             <!-- Imagem fornecida pelo professor para o jogo Link (Zelda) -->
-          
+
             <div class="backscene"></div>
             <!-- Camada de fundo para destacar o conteúdo -->
             <div class="banner">
@@ -272,7 +335,10 @@
                   </div>
                   <div class="pricing">
                     <!-- Seção de informações de compra -->
-                    <a href="https://www.nintendo.com/zelda" target="_blank"></a>
+                    <a
+                      href="https://www.nintendo.com/zelda"
+                      target="_blank"
+                    ></a>
                     <!-- Link estilizado -->
                     <div class="content">
                       <!-- Detalhes de compra -->

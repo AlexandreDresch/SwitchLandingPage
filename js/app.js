@@ -57,3 +57,16 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  const hamburgerButton = document.getElementById("hamburger-menu");
+  const menu = document.querySelector(".hamburger-menu-open");
+
+  menu.addEventListener("click", function () {
+    menu.classList.toggle("hidden");
+  });
+
+  hamburgerButton.addEventListener("click", function () {
+    menu.classList.toggle("hidden");
+  });
+});
