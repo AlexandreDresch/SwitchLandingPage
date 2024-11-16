@@ -70,3 +70,26 @@ document.addEventListener("DOMContentLoaded", function () {
     menu.classList.toggle("hidden");
   });
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  const modalButtons = document.querySelectorAll("#details-button");
+  const modals = document.querySelectorAll(".details-modal");
+
+  modalButtons.forEach((button) => {
+    button.addEventListener("click", function () {
+      const modalId = button.getAttribute("data-modal");
+      const targetModal = document.querySelector(
+        `.details-modal[data-modal="${modalId}"]`
+      );
+      if (targetModal) {
+        targetModal.classList.toggle("hidden");
+      }
+    });
+  });
+
+  modals.forEach((modal) => {
+    modal.addEventListener("click", function () {
+      modal.classList.add("hidden");
+    });
+  });
+});

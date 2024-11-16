@@ -232,10 +232,6 @@ header {
   pointer-events: auto;
 }
 
-.hidden {
-  display: none;
-}
-
 .swiper {
   width: 100%;
   height: 100vh;
@@ -338,6 +334,9 @@ header {
   max-height: 70vh;
 }
 /* Define a altura máxima de 70% da viewport para os elementos com a classe 'right'. */
+.banner {
+  position: relative;
+}
 
 .banner img {
   max-width: 790px;
@@ -397,11 +396,14 @@ header {
 }
 /* A seção de preços é exibida com texto branco e layout flexível para alinhamento horizontal. */
 
-.banner .left .features .content h4 {
+.banner .left .features .content a {
   color: #ffffff;
   font-size: 1.5em;
   font-weight: 400;
   letter-spacing: 2px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
   text-transform: uppercase;
 }
 /* O título 'h4' dentro do conteúdo tem cor branca, tamanho de fonte 1.5em, peso de fonte 400, espaçamento entre letras de 2px e é exibido em maiúsculas. */
@@ -484,6 +486,100 @@ header {
   max-width: 450px;
   max-height: 250px;
 }
+
+#details-button {
+  display: none;
+  position: absolute;
+  top: 120px;
+  right: 50px;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  z-index: 999;
+}
+
+.details-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.details-modal-inner-container {
+  width: 80%;
+  max-width: 500px;
+  padding: 15px;
+  background-color: #ffffff;
+  border-radius: 5px;
+  z-index: 999;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+.details-modal ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.details-modal li {
+  margin-bottom: 1rem;
+}
+
+.details-modal h4 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.details-modal span {
+  display: block;
+  font-size: 1rem;
+  color: #555;
+  margin-top: 0.25rem;
+}
+
+/* Estilizando a seção do trailer */
+.details-modal .trailer {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.details-modal .trailer h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #111;
+}
+
+/* Contêiner responsivo para o iframe */
+.responsive-iframe-container {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%; /* Aspect ratio 16:9 */
+  overflow: hidden;
+}
+
+.responsive-iframe-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.hidden {
+  display: none;
+}
+
 /* O iframe à direita do banner tem largura máxima de 450px e altura máxima de 250px. */
 @media (max-width: 1024px) {
   header {
@@ -500,6 +596,10 @@ header {
 
   .banner .right .description {
     display: none;
+  }
+
+  #details-button {
+    display: block;
   }
 
   .banner .left .features {
@@ -548,6 +648,10 @@ header {
   #hamburger-menu img {
     width: 40px;
     height: 40px;
+  }
+
+  #details-button { 
+    right: 20px;
   }
 
   .swiper .swiper-wrapper .swiper-slide .banner .right {
