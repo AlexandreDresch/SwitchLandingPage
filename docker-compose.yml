@@ -1,0 +1,7 @@
+version: '3'
+services:
+  web:
+    image: switch-landing-page
+    build: .
+    ports:
+      - "8080:80"
